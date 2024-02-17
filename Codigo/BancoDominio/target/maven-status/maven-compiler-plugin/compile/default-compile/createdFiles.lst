@@ -1,0 +1,4 @@
+com\mycompany\bancodominio\controlador\ClienteNuevoDTO.class
+com\mycompany\bancodominio\controlador\ControladorDominio.class
+com\mycompany\bancodominio\controlador\DominioException.class
+com\mycompany\bancodominio\Cliente.class
