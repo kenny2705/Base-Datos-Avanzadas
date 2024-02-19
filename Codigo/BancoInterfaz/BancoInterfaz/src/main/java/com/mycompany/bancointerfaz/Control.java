@@ -75,9 +75,12 @@ public class Control {
         
                         icu.agregarCuenta(cu);
                         
-                        JOptionPane.showConfirmDialog(null, "hh");
-                        JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente " , "OK Mensaje", JOptionPane.YES_OPTION);
+                        JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente ");
                         JOptionPane.showMessageDialog(null, "Su Numero de cuenta es: " + generado.getIdCliente());
+                        
+                        PantallaIngresar pi = new PantallaIngresar();
+                        pi.setVisible(true);
+                        pi.autocompletarNC(generado.getIdCliente());
                         }
         
                     catch (Exception e){
@@ -101,6 +104,53 @@ public class Control {
     }
     
 
+    
+    public void iniciarSesion(String nCuenta, String contra){
+        
+        int cuenta = Integer.parseInt(nCuenta);
+        String contrasenia = contra;        
+        
+        PantallaIngresar pi = new PantallaIngresar();
+        
+        try{
+            
+            ic.consultarClienteporNC(cuenta);
+            
+            try{
+                
+                icu.consultarCuentaPorContra(contra);
+                PantallaCuentaInicio pci = new PantallaCuentaInicio();
+                pci.setVisible(true);
+                
+                try{
+                
+                float saldo = icu.consultarSaldo(contra);
+                
+                pci.autocompletarNC(cuenta);
+                pci.establecerSaldo(saldo);
+                }
+                    
+                catch(Exception e){
+                   JOptionPane.showMessageDialog(null, "Error, saldo bugeado", "ERROR_MESSAGE", JOptionPane.WARNING_MESSAGE);
+
+                }
+                
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Error, contraseña incorrecta", "ERROR_MESSAGE", JOptionPane.WARNING_MESSAGE);
+
+            }
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error, cliente inexistente", "ERROR_MESSAGE", JOptionPane.WARNING_MESSAGE);
+
+        }
+        
+        
+        
+    }
+    
     
     
 }

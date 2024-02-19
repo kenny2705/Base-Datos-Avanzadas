@@ -52,7 +52,6 @@ public class PantalaRegistrar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 255));
-        setPreferredSize(new java.awt.Dimension(700, 500));
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
@@ -265,14 +264,7 @@ public class PantalaRegistrar extends javax.swing.JFrame {
             Logger.getLogger(PantalaRegistrar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
-        
-        PantallaPrincipal pp = new PantallaPrincipal();
-        
-        
-        
-        
-        pp.setVisible(true);
+
         this.dispose();
     }//GEN-LAST:event_botonAceparActionPerformed
 

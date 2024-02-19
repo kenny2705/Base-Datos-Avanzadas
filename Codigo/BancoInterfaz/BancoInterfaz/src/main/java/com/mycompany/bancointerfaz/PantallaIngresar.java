@@ -4,7 +4,7 @@
  */
 package com.mycompany.bancointerfaz;
 
-import com.mycompany.bancoGUI.formIniciarSesion;
+
 import com.mycompany.bancopersistencia.excepciones.PersistenciaException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -175,21 +175,18 @@ public class PantallaIngresar extends javax.swing.JFrame {
         String contrasenia;
 
         cuenta = txtNumCuenta.getText();
-        contrasenia = txtNumCuenta.getText();
+        contrasenia = txtContra.getText();
         
         int id = Integer.parseInt(cuenta);
         
         try{
-            c.consultarID(id);
-            PantallaCuentaInicio ci = new PantallaCuentaInicio();
-            ci.setVisible(true);
+            c.iniciarSesion(cuenta, contrasenia);
             this.dispose();
-            
         }
         
         catch(Exception e){
             
-            JOptionPane.showMessageDialog(null, "Error, el Cliente no existe", "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error", "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
 
             
         }
@@ -203,6 +200,11 @@ public class PantallaIngresar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtContraActionPerformed
 
+    public void autocompletarNC(int id){
+        String s = String.valueOf(id);
+        
+        txtNumCuenta.setText(s);
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

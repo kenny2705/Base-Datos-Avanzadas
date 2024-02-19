@@ -77,6 +77,7 @@ public class PantallaCuentaInicio extends javax.swing.JFrame {
 
         txtSaldo.setEditable(false);
         txtSaldo.setBackground(new java.awt.Color(255, 255, 255));
+        txtSaldo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         txtSaldo.setForeground(new java.awt.Color(0, 0, 0));
         txtSaldo.setBorder(null);
         txtSaldo.addActionListener(new java.awt.event.ActionListener() {
@@ -312,6 +313,17 @@ public class PantallaCuentaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNumCuenta2ActionPerformed
 
     
+    public void establecerSaldo(float saldo){
+        float dinero = saldo;
+        txtSaldo.setText(String.valueOf(dinero));
+        
+    }
+    
+    public void autocompletarNC(int id){
+        String s = String.valueOf(id);
+        
+        txtNumCuenta2.setText(s);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonCerrarSecion;
