@@ -4,8 +4,6 @@
  */
 package com.mycompany.bancointerfaz;
 
-
-
 /**
  *
  * @author Acer
@@ -19,6 +17,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+
     }
     
     

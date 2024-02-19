@@ -4,6 +4,10 @@
  */
 package com.mycompany.bancointerfaz;
 
+import com.mycompany.bancopersistencia.excepciones.PersistenciaException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Acer
@@ -13,6 +17,9 @@ public class PantalaRegistrar extends javax.swing.JFrame {
     /**
      * Creates new form PantalaRegistrar
      */
+    
+    Control c = new Control();
+    
     public PantalaRegistrar() {
         initComponents();
     }
@@ -239,7 +246,32 @@ public class PantalaRegistrar extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonAceparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceparActionPerformed
+        
+        String nombre = txtNombre.getText();
+        String apellidoP = txtApellidoP.getText();
+        String apellidoM = txtApellidoM.getText();
+        String contra = txtContraseña.getText();
+        String domicilio = txtDomicilio.getText();
+        String nacimiento = txtFechaNacimiento.getText();
+        
+        try {
+            
+            
+            c.registrarse(nombre, apellidoP, apellidoM, domicilio, nacimiento, contra);
+            
+            }
+        
+         catch (PersistenciaException ex) {
+            Logger.getLogger(PantalaRegistrar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
         PantallaPrincipal pp = new PantallaPrincipal();
+        
+        
+        
+        
         pp.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botonAceparActionPerformed
