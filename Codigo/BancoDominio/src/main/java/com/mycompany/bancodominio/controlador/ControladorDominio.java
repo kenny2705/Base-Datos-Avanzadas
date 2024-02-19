@@ -5,9 +5,11 @@
 package com.mycompany.bancodominio.controlador;
 
 import com.mycompany.bancodominio.Cliente;
+import com.mycompany.bancodominio.Cuenta;
 import com.mycompany.bancopersistencia.conexion.dtos.ClienteNuevoDTO;
 import com.mycompany.bancopersistencia.controlador.ControladorPersistencia;
 import com.mycompany.bancopersistencia.excepciones.PersistenciaException;
+import com.mycompany.bancopersistencia.conexion.dtos.CuentaNuevaDTO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,5 +38,25 @@ public class ControladorDominio {
         }
     }
 
+    
+    
+    
+    public Cuenta agregarCuenta(String contra, String fechaApertura, float saldo, int idCliente) throws DominioException{
+        CuentaNuevaDTO cuentaDTO = new CuentaNuevaDTO(contra, fechaApertura, saldo, idCliente);
+        Cuenta cuentaAgregada;
+        
+        try{
+            cuentaAgregada = this.controlPersistencia.agregarCuenta(cuentaDTO);
+            return cuentaAgregada;
+        }
+        
+        catch(PersistenciaException ex){
+        
+            Logger.getLogger(ControladorDominio.class.getName()).log(Level.SEVERE, null, ex);
+            throw  new DominioException("No se agrego", ex);
+        }
+        
+    }
+    
     // pendiente
 }

@@ -106,6 +106,7 @@ public class ClienteDAO implements IClienteDAO{
         } catch (Exception e) {
             LOG.log(Level.SEVERE, "Cliente no encontrado", e);
             throw new PersistenciaException("No se ha encontrado ningún activista", e);
+            
         }
 
     }
