@@ -1,0 +1,5 @@
+Modelo Entidad Relacion y Relacional
+https://lucid.app/lucidchart/11eab8ec-2b91-43ea-a36f-d16defb6f571/edit?viewport_loc=-1738%2C-49%2C2875%2C1409%2C0_0&invitationId=inv_c3542a01-a946-4542-a277-ab6c64e8ae1e
+
+- StoryBoard
+https://www.figma.com/file/0trIBnx7lAvndWyiGIQwLx/StoryBoard-Banco?type=design&node-id=0%3A1&mode=design&t=HUhYIIsNG4k8U0jC-1
